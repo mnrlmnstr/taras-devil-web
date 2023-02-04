@@ -1,0 +1,9 @@
+###
+# Show outdated packages:
+#   pip list --outdated
+# Install new dependencies & upgrade subdependencies:
+#   pip install -r requirements.txt --upgrade --upgrade-strategy eager
+###
+
+fastapi==0.89.1
+uvicorn[standard]==0.20.0

@@ -4,6 +4,7 @@
 
 # Python
 db.sqlite3
+*.db
 *.pyc
 .coverage
 /venv/

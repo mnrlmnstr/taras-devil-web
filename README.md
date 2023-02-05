@@ -3,12 +3,18 @@ Web application for pet project
 
 ## Setup
 ```shell
-# Create & activate virtual environment
-python3 -m venv "venv"
+# Create and activate virtual environment
+python3 -m venv 'venv'
 source venv/bin/activate
 
 # Install dependencies
 pip3 install -r requirements.txt
+
+# Create database
+sqlite3 taras.db
+
+# Upgrade database to latest revision
+alembic upgrade head
 ```
 
 ## Start
@@ -16,18 +22,15 @@ pip3 install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-## Database
+## Development
 ### Alembic
 ```shell
-# Create db
-sqlite3 name.db
 
-# Init alembic
-alembic init alembic
+# Add models to `alembic/env.py` to autogenerate revisions
 
-#Create revision
-alembic revision --autogenerate  -m "initial"
+# Create revision
+alembic revision --autogenerate  -m "message"
 
-#Upgrade db to latest revision
+# Upgrade database to latest revision
 alembic upgrade head
 ```
